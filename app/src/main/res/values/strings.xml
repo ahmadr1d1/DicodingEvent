@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">DicodingEvent</string>
+    <string name="title_home">Home</string>
+    <string name="title_upcoming">Upcoming</string>
+    <string name="title_finished">Finished</string>
+
+    <string name="name_event">Nama Event</string>
+    <string name="failed">Gagal Mengambil Data</string>
+    <string name="one_more">Tekan sekali lagi untuk keluar</string>
+    <string name="image_event">Gambar Event</string>
+    <string name="event_owner">Diselenggarakan oleh: %1$s</string>
+    <string name="event_city">Lokasi: %1$s</string>
+    <string name="event_quota">Kuota: %1$d</string>
+    <string name="event_registered">Terdaftar: %1$d Peserta</string>
+    <string name="category_event">Kategori Event</string>
+    <string name="dot">  •  </string>
+    <string name="event_begin_time">Mulai : <b>%1$s</b></string>
+    <string name="event_end_time">Selesai : <b>%1$s</b></string>
+    <string name="event_summary">Ringkasan singkat event…</string>
+    <string name="event_description">Deskripsi lengkap event…</string>
+    <string name="button_register">Register</string>
+    <string name="event_visit"><u>Kunjungi Website Event</u></string>
+
+    <string name="title">Dicoding Event</string>
+    <string name="tvUpcoming">Upcoming Events</string>
+    <string name="tvFinished">Finished Events</string>
+
+    <string name="error">Terjadi Kesalahan</string>
+    <string name="search_hint">Search</string>
+    <string name="no_data_upcoming">Sedang tidak ada event yang akan datang.</string>
+    <string name="no_data_finished">Data %1$s tidak ditemukan</string>
+</resources>
