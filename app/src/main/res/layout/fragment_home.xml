@@ -11,16 +11,6 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/tvDicoding"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
-            android:fontFamily="@font/poppins"
-            android:text="@string/title"
-            android:textSize="24sp"
-            android:textStyle="bold" />
-
-        <TextView
             android:id="@+id/tvUpcoming"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

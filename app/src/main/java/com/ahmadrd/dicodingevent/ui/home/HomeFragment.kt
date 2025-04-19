@@ -9,11 +9,11 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ahmadrd.dicodingevent.R
-import com.ahmadrd.dicodingevent.data.response.ListEventsItem
+import com.ahmadrd.dicodingevent.data.remote.response.ListEventsItem
 import com.ahmadrd.dicodingevent.databinding.FragmentHomeBinding
-import com.ahmadrd.dicodingevent.ui.ListEventAdapter
-import com.ahmadrd.dicodingevent.ui.ListEventAdapter.Companion.VIEW_TYPE_HORIZONTAL
-import com.ahmadrd.dicodingevent.ui.ListEventAdapter.Companion.VIEW_TYPE_VERTICAL
+import com.ahmadrd.dicodingevent.ui.adapter.ListEventAdapter
+import com.ahmadrd.dicodingevent.ui.adapter.ListEventAdapter.Companion.VIEW_TYPE_HORIZONTAL
+import com.ahmadrd.dicodingevent.ui.adapter.ListEventAdapter.Companion.VIEW_TYPE_VERTICAL
 
 class HomeFragment : Fragment() {
 

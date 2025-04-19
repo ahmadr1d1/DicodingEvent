@@ -10,7 +10,7 @@ import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ahmadrd.dicodingevent.R
 import com.ahmadrd.dicodingevent.databinding.FragmentUpcomingBinding
-import com.ahmadrd.dicodingevent.ui.ListEventAdapter
+import com.ahmadrd.dicodingevent.ui.adapter.ListEventAdapter
 
 class UpcomingFragment : Fragment() {
 

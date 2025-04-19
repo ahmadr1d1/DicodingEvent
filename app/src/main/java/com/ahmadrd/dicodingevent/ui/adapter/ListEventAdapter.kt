@@ -1,12 +1,13 @@
-package com.ahmadrd.dicodingevent.ui
+package com.ahmadrd.dicodingevent.ui.adapter
 
 import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.ahmadrd.dicodingevent.data.response.ListEventsItem
+import com.ahmadrd.dicodingevent.data.remote.response.ListEventsItem
 import com.ahmadrd.dicodingevent.databinding.ItemRowEventBinding
 import com.ahmadrd.dicodingevent.databinding.ItemRowEventHorizontalBinding
 import com.ahmadrd.dicodingevent.ui.detail.DetailActivity
@@ -64,6 +65,7 @@ class ListEventAdapter : ListAdapter<ListEventsItem, RecyclerView.ViewHolder>(DI
         fun bind(item: ListEventsItem) {
             binding.tvTitle.text = item.name
             binding.tvDesc.text = item.summary
+            Log.d("ListEventAdapter", "Deskripsi: ${item.summary}")
             Glide.with(binding.root.context)
                 .load(item.mediaCover)
                 .into(binding.eventImage)

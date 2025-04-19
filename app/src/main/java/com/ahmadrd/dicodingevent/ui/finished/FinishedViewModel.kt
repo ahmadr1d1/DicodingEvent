@@ -4,9 +4,9 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.ahmadrd.dicodingevent.data.response.DicodingEventResponse
-import com.ahmadrd.dicodingevent.data.response.ListEventsItem
-import com.ahmadrd.dicodingevent.data.retrofit.ApiConfig
+import com.ahmadrd.dicodingevent.data.remote.response.DicodingEventResponse
+import com.ahmadrd.dicodingevent.data.remote.response.ListEventsItem
+import com.ahmadrd.dicodingevent.data.remote.retrofit.ApiConfig
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -26,9 +26,6 @@ class FinishedViewModel : ViewModel() {
     val error: LiveData<Boolean> = _error
 
     private var lastQuery: String? = null // Menyimpan query terakhir
-
-    private val _searchQuery = MutableLiveData<String>()
-    val searchQuery: LiveData<String> get() = _searchQuery
     var currentQuery: String = ""
 
     companion object {

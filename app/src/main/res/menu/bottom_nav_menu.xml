@@ -8,12 +8,22 @@
 
     <item
         android:id="@+id/navigation_upcoming"
-        android:icon="@drawable/upcoming"
+        android:icon="@drawable/baseline_arrow_circle_up_24"
         android:title="@string/title_upcoming" />
 
     <item
         android:id="@+id/navigation_finished"
-        android:icon="@drawable/finished"
+        android:icon="@drawable/baseline_check_circle_outline_24"
         android:title="@string/title_finished" />
+
+    <item
+        android:id="@+id/navigation_favorite"
+        android:icon="@drawable/baseline_favorite_border_24"
+        android:title="@string/title_favorite" />
+
+    <item
+        android:id="@+id/navigation_settings"
+        android:icon="@drawable/baseline_settings_24"
+        android:title="@string/title_settings" />
 
 </menu>

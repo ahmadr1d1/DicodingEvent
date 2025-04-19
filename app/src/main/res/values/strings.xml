@@ -1,8 +1,10 @@
 <resources>
     <string name="app_name">DicodingEvent</string>
-    <string name="title_home">Home</string>
-    <string name="title_upcoming">Upcoming</string>
-    <string name="title_finished">Finished</string>
+    <string name="title_home">Dicoding Events</string>
+    <string name="title_upcoming">Upcoming Events</string>
+    <string name="title_finished">Finished Events</string>
+    <string name="title_favorite">Favorite Events</string>
+    <string name="title_settings">Settings</string>
 
     <string name="name_event">Nama Event</string>
     <string name="failed">Gagal Mengambil Data</string>
@@ -10,9 +12,10 @@
     <string name="image_event">Gambar Event</string>
     <string name="event_owner">Diselenggarakan oleh: %1$s</string>
     <string name="event_city">Lokasi: %1$s</string>
-    <string name="event_quota">Kuota: %1$d</string>
-    <string name="event_registered">Terdaftar: %1$d Peserta</string>
-    <string name="category_event">Kategori Event</string>
+    <string name="event_quota">Kuota Peserta &#160;- %1$d Peserta</string>
+    <string name="event_registered">Terdaftar - %1$d Peserta</string>
+    <string name="event_registered_text">Sebanyak %1$d peserta sudah terdaftar</string>
+    <string name="category_event">Kategori Event -&#160;</string>
     <string name="dot">  •  </string>
     <string name="event_begin_time">Mulai : <b>%1$s</b></string>
     <string name="event_end_time">Selesai : <b>%1$s</b></string>
@@ -29,4 +32,21 @@
     <string name="search_hint">Search</string>
     <string name="no_data_upcoming">Sedang tidak ada event yang akan datang.</string>
     <string name="no_data_finished">Data %1$s tidak ditemukan</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!--    Settings    -->
+    <string name="dark_mode">Dark Mode</string>
+    <string name="title_enable_dark_mode">Enable Dark Mode</string>
+    <string name="daily_reminder">Daily Reminder</string>
+    <string name="title_enable_daily_reminder">Enable Notification</string>
+
+    <!--    Favorite    -->
+    <string name="text_favorite">Events yang kamu simpan</string>
+    <string name="no_data_favorite">Kamu belum menyimpan event apapun.</string>
+    <string name="floatingButton">Favorite FLoating Button</string>
+    <string name="add">Berhasil menambahkan event ke favorite</string>
+    <string name="delete">Berhasil menghapus event dari favorite</string>
+
+    <string name="event_begin_time_notif">Event akan dimulai pada &#160;</string>
 </resources>

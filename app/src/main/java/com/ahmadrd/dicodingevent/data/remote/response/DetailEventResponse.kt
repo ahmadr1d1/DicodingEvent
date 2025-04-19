@@ -1,4 +1,4 @@
-package com.ahmadrd.dicodingevent.data.response
+package com.ahmadrd.dicodingevent.data.remote.response
 
 import com.google.gson.annotations.SerializedName
 

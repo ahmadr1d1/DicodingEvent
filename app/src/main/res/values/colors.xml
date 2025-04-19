@@ -149,4 +149,5 @@
     <color name="card">#FFFFFFFF</color>
     <color name="blue_main">#0056FF</color>
     <color name="gray_dark">#433C3C</color>
+    <color name="grey">#888888</color>
 </resources>

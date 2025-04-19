@@ -1,7 +1,7 @@
-package com.ahmadrd.dicodingevent.data.retrofit
+package com.ahmadrd.dicodingevent.data.remote.retrofit
 
-import com.ahmadrd.dicodingevent.data.response.DetailEventResponse
-import com.ahmadrd.dicodingevent.data.response.DicodingEventResponse
+import com.ahmadrd.dicodingevent.data.remote.response.DetailEventResponse
+import com.ahmadrd.dicodingevent.data.remote.response.DicodingEventResponse
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -27,4 +27,7 @@ interface ApiService {
         @Query("q") q: String,
 //        @Query("limit") limit: Int? = 40
     ): Call<DicodingEventResponse>
+
+    @GET("events/{name}")
+    suspend fun getFavEventByName(@Path("name") name: String): DetailEventResponse
 }
