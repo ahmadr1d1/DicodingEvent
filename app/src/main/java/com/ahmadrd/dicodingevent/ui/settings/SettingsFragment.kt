@@ -4,18 +4,16 @@ import android.Manifest
 import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.CompoundButton
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.work.ExistingPeriodicWorkPolicy
-import androidx.work.OneTimeWorkRequestBuilder
 import androidx.work.PeriodicWorkRequestBuilder
 import androidx.work.WorkManager
 import com.ahmadrd.dicodingevent.databinding.FragmentSettingsBinding
@@ -93,13 +91,6 @@ class SettingsFragment : Fragment() {
                 // Nonaktifkan worker
                 WorkManager.getInstance(requireContext()).cancelUniqueWork("EventNotification")
             }
-        }
-
-        binding.btnTestNotification.setOnClickListener {
-            val testWorkRequest = OneTimeWorkRequestBuilder<NotificationWorker>().build()
-            WorkManager.getInstance(requireContext()).enqueue(testWorkRequest)
-
-            Toast.makeText(requireContext(), "Worker dipanggil", Toast.LENGTH_SHORT).show()
         }
     }
 
