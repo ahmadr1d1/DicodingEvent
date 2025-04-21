@@ -1,7 +1,6 @@
 package com.ahmadrd.dicodingevent.ui.favorite
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -53,7 +52,6 @@ class FavoriteFragment : Fragment() {
             binding.tvFavorite.visibility = if (events.isEmpty()) View.GONE else View.VISIBLE
             val items = arrayListOf<Event>()
             events.map {
-                Log.d("FavoriteFragment", "Deskripsi dari DB: ${it.description}")
                 val item = Event(
                     id = it.eventId,
                     mediaCover = it.mediaCover,

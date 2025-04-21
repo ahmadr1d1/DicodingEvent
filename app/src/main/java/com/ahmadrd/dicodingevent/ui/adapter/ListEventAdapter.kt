@@ -1,7 +1,6 @@
 package com.ahmadrd.dicodingevent.ui.adapter
 
 import android.content.Intent
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
@@ -65,7 +64,6 @@ class ListEventAdapter : ListAdapter<ListEventsItem, RecyclerView.ViewHolder>(DI
         fun bind(item: ListEventsItem) {
             binding.tvTitle.text = item.name
             binding.tvDesc.text = item.summary
-            Log.d("ListEventAdapter", "Deskripsi: ${item.summary}")
             Glide.with(binding.root.context)
                 .load(item.mediaCover)
                 .into(binding.eventImage)

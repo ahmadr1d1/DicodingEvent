@@ -79,7 +79,6 @@ class SettingsFragment : Fragment() {
             viewModel.saveNotificationSetting(isChecked)
 
             if (isChecked) {
-                // Aktifkan worker
                 val workRequest = PeriodicWorkRequestBuilder<NotificationWorker>(1, TimeUnit.DAYS)
                     .build()
                 WorkManager.getInstance(requireContext()).enqueueUniquePeriodicWork(
@@ -88,7 +87,6 @@ class SettingsFragment : Fragment() {
                     workRequest
                 )
             } else {
-                // Nonaktifkan worker
                 WorkManager.getInstance(requireContext()).cancelUniqueWork("EventNotification")
             }
         }

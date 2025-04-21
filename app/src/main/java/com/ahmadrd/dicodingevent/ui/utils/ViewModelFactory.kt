@@ -30,13 +30,11 @@ class ViewModelFactory private constructor(
         @Volatile
         private var instance: ViewModelFactory? = null
 
-        // Khusus untuk ViewModel yang butuh Repository
         fun getInstance(context: Context): ViewModelFactory =
             instance ?: synchronized(this) {
                 instance ?: ViewModelFactory(repository = Injection.provideRepository(context))
             }.also { instance = it }
 
-        // Khusus untuk ViewModel yang butuh SettingPreferences
         fun getInstance(pref: SettingPreferences): ViewModelFactory =
             ViewModelFactory(pref = pref)
     }

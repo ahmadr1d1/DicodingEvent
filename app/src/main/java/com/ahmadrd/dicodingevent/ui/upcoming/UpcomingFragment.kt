@@ -17,9 +17,6 @@ class UpcomingFragment : Fragment() {
     private var _binding: FragmentUpcomingBinding? = null
     private lateinit var adapter: ListEventAdapter
     private val upcomingViewModel: UpcomingViewModel by viewModels()
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
     override fun onCreateView(

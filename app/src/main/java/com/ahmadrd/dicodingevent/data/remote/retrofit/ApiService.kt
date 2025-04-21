@@ -22,11 +22,7 @@ interface ApiService {
     fun getEventFinished(@Query("active") active: Int? = 0): Call<DicodingEventResponse>
 
     @GET("events")
-    fun searchEvents(
-//        @Query("active") active: Int? = -1,
-        @Query("q") q: String,
-//        @Query("limit") limit: Int? = 40
-    ): Call<DicodingEventResponse>
+    fun searchEvents(@Query("q") q: String): Call<DicodingEventResponse>
 
     @GET("events/{name}")
     suspend fun getFavEventByName(@Path("name") name: String): DetailEventResponse

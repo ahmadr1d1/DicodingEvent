@@ -11,7 +11,7 @@ import java.util.TimeZone
 
 class HelperTime {
     companion object {
-        private const val TAG = "HelperTime" // Tambahkan TAG untuk logging
+        private const val TAG = "HelperTime"
 
         fun formatBeginTime(isoTime: String): String {
             return try {
@@ -23,7 +23,7 @@ class HelperTime {
                     "${zonedDateTimeJakarta.format(outputFormatter)} WIB"
                 } else {
                     val inputFormat = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.US)
-                    inputFormat.timeZone = TimeZone.getTimeZone("UTC") // Asumsi input dalam UTC, sesuaikan jika berbeda
+                    inputFormat.timeZone = TimeZone.getTimeZone("UTC")
                     val date = inputFormat.parse(isoTime)
 
                     if (date != null) {
@@ -32,12 +32,12 @@ class HelperTime {
                         "${outputFormat.format(date)} WIB"
                     } else {
                         Log.e(TAG, "Gagal mem-parsing waktu: $isoTime dengan SimpleDateFormat")
-                        isoTime // Kembalikan waktu asli jika parsing gagal
+                        isoTime
                     }
                 }
             } catch (e: Exception) {
                 Log.e(TAG, "Terjadi kesalahan saat memformat waktu: ${e.message}", e)
-                isoTime // fallback kalau parsing gagal, tapi sekarang kita log kesalahannya
+                isoTime
             }
         }
     }

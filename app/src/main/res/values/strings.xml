@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">DicodingEvent</string>
     <string name="title_home">Dicoding Events</string>
     <string name="title_upcoming">Upcoming Events</string>
@@ -11,20 +11,12 @@
     <string name="one_more">Tekan sekali lagi untuk keluar</string>
     <string name="image_event">Gambar Event</string>
     <string name="event_owner">Diselenggarakan oleh: %1$s</string>
-    <string name="event_city">Lokasi: %1$s</string>
-    <string name="event_quota">Kuota Peserta &#160;- %1$d Peserta</string>
-    <string name="event_registered">Terdaftar - %1$d Peserta</string>
-    <string name="event_registered_text">Sebanyak %1$d peserta sudah terdaftar</string>
+    <string name="event_quota" tools:ignore="PluralsCandidate">Kuota Peserta &#160;- %1$d Peserta</string>
+    <string name="event_registered_text" tools:ignore="PluralsCandidate">Sebanyak %1$d peserta sudah terdaftar</string>
     <string name="category_event">Kategori Event -&#160;</string>
-    <string name="dot">  •  </string>
-    <string name="event_begin_time">Mulai : <b>%1$s</b></string>
-    <string name="event_end_time">Selesai : <b>%1$s</b></string>
-    <string name="event_summary">Ringkasan singkat event…</string>
     <string name="event_description">Deskripsi lengkap event…</string>
     <string name="button_register">Register</string>
-    <string name="event_visit"><u>Kunjungi Website Event</u></string>
 
-    <string name="title">Dicoding Event</string>
     <string name="tvUpcoming">Upcoming Events</string>
     <string name="tvFinished">Finished Events</string>
 
@@ -32,8 +24,6 @@
     <string name="search_hint">Search</string>
     <string name="no_data_upcoming">Sedang tidak ada event yang akan datang.</string>
     <string name="no_data_finished">Data %1$s tidak ditemukan</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <!--    Settings    -->
     <string name="dark_mode">Dark Mode</string>

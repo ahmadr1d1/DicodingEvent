@@ -1,7 +1,6 @@
 package com.ahmadrd.dicodingevent.ui.adapter
 
 import android.content.Intent
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
@@ -29,10 +28,7 @@ class ListFavoriteAdapter: ListAdapter<Event, ListFavoriteAdapter.ViewHolder>(DI
     class ViewHolder(private val binding: ItemRowFavBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(item: Event) {
             binding.tvTitle.text = item.name
-            Log.d("ListFavoriteAdapter", "Judul: ${item.name}")
             binding.tvDesc.text = item.summary
-            Log.d("ListFavoriteAdapter", "Deskripsi-Summary: ${item.summary}")
-            Log.d("ListFavoriteAdapter", "Deskripsi-Desc: ${item.description}")
             Glide.with(binding.root.context)
                 .load(item.mediaCover)
                 .into(binding.eventImage)

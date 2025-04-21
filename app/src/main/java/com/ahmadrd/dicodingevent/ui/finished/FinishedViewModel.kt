@@ -25,7 +25,7 @@ class FinishedViewModel : ViewModel() {
     private val _error = MutableLiveData<Boolean>()
     val error: LiveData<Boolean> = _error
 
-    private var lastQuery: String? = null // Menyimpan query terakhir
+    private var lastQuery: String? = null
     var currentQuery: String = ""
 
     companion object {
@@ -62,7 +62,7 @@ class FinishedViewModel : ViewModel() {
                 Log.e(TAG, "onFailure 2 getEvents: ${t.message}")
             }
         })
-        lastQuery = null // Reset query saat full data ditampilkan
+        lastQuery = null
     }
 
     fun getEventSearch(query: String) {
@@ -83,7 +83,7 @@ class FinishedViewModel : ViewModel() {
                 Log.e(TAG, "onFailure 2 getSearchUser: ${t.message}")
             }
         })
-        lastQuery = query // Simpan query terakhir
+        lastQuery = query
     }
 
     // Refresh Page

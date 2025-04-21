@@ -57,7 +57,6 @@ class HomeFragment : Fragment() {
     }
 
     private fun setListUpcomingEvents(listEvent: List<ListEventsItem>) {
-        // Set viewType untuk setiap item di listEvent
         val listEventWithViewType = listEvent.map { it.copy(viewType = VIEW_TYPE_HORIZONTAL) }
         val listEventAdapter = ListEventAdapter()
         listEventAdapter.submitList(listEventWithViewType)
@@ -68,7 +67,6 @@ class HomeFragment : Fragment() {
     }
 
     private fun setListFinishedEvents(listEvent: List<ListEventsItem>) {
-        // Set viewType untuk setiap item di listEvent
         val listEventWithViewType = listEvent.map { it.copy(viewType = VIEW_TYPE_VERTICAL) }
         val listEventAdapter = ListEventAdapter()
         listEventAdapter.submitList(listEventWithViewType)

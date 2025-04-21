@@ -58,19 +58,6 @@
         <item name="cornerSize">16dp</item>
     </style>
 
-    <!--    SplashScreen    -->
-    <style name="Theme.App.Starting" parent="Theme.SplashScreen.IconBackground">
-        <!-- Set the splash screen background, animated icon, and animation duration. -->
-        <item name="windowSplashScreenBackground">@color/white</item>
-
-        <!-- Set the theme of the Activity that directly follows your splash screen. -->
-        <item name="postSplashScreenTheme">@style/Theme.DicodingEvent</item>
-
-        <item name="windowSplashScreenAnimatedIcon">@drawable/events_logo</item>
-
-        <item name="splashScreenIconSize">@dimen/splash_icon</item>
-    </style>
-
     <!--    Custom Default Font    -->
     <style name="CustomAppBar" parent="Widget.MaterialComponents.Toolbar">
         <item name="titleTextAppearance">@style/CustomAppBarTitle</item>

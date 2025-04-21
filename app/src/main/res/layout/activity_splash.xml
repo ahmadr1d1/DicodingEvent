@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     android:id="@+id/main"
     android:background="?android:colorBackground"
-    tools:context=".ui.SplashActivity">
+    tools:context=".ui.SplashActivity"
+    tools:ignore="Overdraw">
 
     <ImageView
         android:id="@+id/imageView"

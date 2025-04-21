@@ -1,6 +1,5 @@
 package com.ahmadrd.dicodingevent.ui.favorite
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -9,8 +8,8 @@ import com.ahmadrd.dicodingevent.data.Repository
 import com.ahmadrd.dicodingevent.data.local.entity.FavoriteEvents
 import com.ahmadrd.dicodingevent.data.remote.response.DetailEventResponse
 import com.ahmadrd.dicodingevent.data.remote.retrofit.ApiConfig
-import kotlinx.coroutines.launch
 import com.ahmadrd.dicodingevent.ui.utils.Result
+import kotlinx.coroutines.launch
 
 class FavoriteViewModel(private val favEventRepo: Repository) : ViewModel() {
 
@@ -23,7 +22,7 @@ class FavoriteViewModel(private val favEventRepo: Repository) : ViewModel() {
                 val response = ApiConfig.getApiService().getFavEventByName(username)
                 _result.value = Result.Success(response)
             } catch (e: Exception) {
-                Log.e(TAG, "getDetailUser : ${e.message.toString()}")
+                _result.value = Result.Error(e.message.toString())
             }
         }
     }
@@ -43,9 +42,5 @@ class FavoriteViewModel(private val favEventRepo: Repository) : ViewModel() {
         viewModelScope.launch {
             favEventRepo.deleteByEventId(eventId)
         }
-    }
-
-    companion object {
-        const val TAG = "FavoriteViewModel"
     }
 }

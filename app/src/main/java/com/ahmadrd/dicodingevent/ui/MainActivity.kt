@@ -31,8 +31,6 @@ class MainActivity : AppCompatActivity() {
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.nav_host_fragment_activity_main) as NavHostFragment
         val navController = navHostFragment.navController
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
         val appBarConfiguration = AppBarConfiguration(
             setOf(
                 R.id.navigation_home,
@@ -44,30 +42,19 @@ class MainActivity : AppCompatActivity() {
         )
         val toolbar = binding.toolbar
         setSupportActionBar(toolbar)
-//        supportActionBar?.title = "Home"
-//        navController.addOnDestinationChangedListener { _, destination, _ ->
-//            toolbar.title = when (destination.id) {
-//                R.id.navigation_home -> "Home"
-//                R.id.navigation_upcoming -> "Upcoming Events"
-//                R.id.navigation_finished -> "Finished Events"
-//                else -> "Home"
-//            }
-//        }
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
-        // Callback saat tombol back ditekan
         onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
                 if (doubleBackToExitPressedOnce) {
-                    finish() // Keluar dari aplikasi
+                    finish()
                     return
                 }
 
                 doubleBackToExitPressedOnce = true
                 Toast.makeText(this@MainActivity, R.string.one_more, Toast.LENGTH_SHORT).show()
 
-                // Reset kembali ke false setelah 2 detik
                 handler.postDelayed({ doubleBackToExitPressedOnce = false }, 2000)
             }
         })

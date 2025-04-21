@@ -17,9 +17,6 @@ class FinishedFragment : Fragment() {
     private var _binding: FragmentFinishedBinding? = null
     private lateinit var adapter: ListEventAdapter
     private val finishedViewModel: FinishedViewModel by viewModels()
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
     override fun onCreateView(

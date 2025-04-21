@@ -1,6 +1,5 @@
 package com.ahmadrd.dicodingevent.data.local.room
 
-import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
@@ -22,7 +21,4 @@ interface FavoriteEventsDao {
 
     @Query("DELETE FROM favorite_events WHERE eventId = :eventId")
     suspend fun deleteByEventId(eventId: Int)
-
-    @Query("SELECT * FROM favorite_events WHERE eventId = :eventId")
-    fun isEventFavorited(eventId: Int): LiveData<List<FavoriteEvents>>
 }

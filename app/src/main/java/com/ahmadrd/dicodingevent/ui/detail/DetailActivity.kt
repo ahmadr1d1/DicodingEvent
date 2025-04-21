@@ -31,13 +31,11 @@ class DetailActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-//        enableEdgeToEdge()
         binding = ActivityDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-//        binding.collapsingToolbar.title = "Detail Event"
 
         val dataEvent = intent.getIntExtra(EXTRA_EVENT_ID, 0)
         viewModel.getDetailEvent(dataEvent)
@@ -107,22 +105,17 @@ class DetailActivity : AppCompatActivity() {
             if (detailEventResponse != null) {
                 if (detailEventResponse.event != null) {
                     with(binding) {
-//                        toolbar.title = detailEventResponse.event.name
                         tvEventTitle.text = detailEventResponse.event.name
                         tvEventCategory.text = detailEventResponse.event.category
                         tvEventOwner.text = getString(R.string.event_owner, detailEventResponse.event.ownerName)
-//                        tvEventCity.text = getString(R.string.event_city, detailEventResponse.event.cityName)
                         tvEventQuota.text = getString(R.string.event_quota, detailEventResponse.event.quota)
                         tvEventRegistered.text = getString(R.string.event_registered_text, detailEventResponse.event.registrants)
-//                        tvEventSummary.text = detailEventResponse.event.summary
                         tvEventDescription.text = HtmlCompat.fromHtml(
                             detailEventResponse.event.description.toString(),
                             HtmlCompat.FROM_HTML_MODE_LEGACY
                         )
                         val beginHelperTime = HelperTime.formatBeginTime(detailEventResponse.event.beginTime!!)
-                        val endHelperTime = HelperTime.formatBeginTime(detailEventResponse.event.endTime!!)
                         tvEventBeginTime.text = beginHelperTime
-//                        tvEventEndTime.text = getString(R.string.event_end_time, endHelperTime)
 
                         Glide.with(this@DetailActivity)
                             .load(detailEventResponse.event.mediaCover)
@@ -152,6 +145,7 @@ class DetailActivity : AppCompatActivity() {
 
         viewModel.isLoading.observe(this) { isLoading ->
             binding.progressBar.visibility = if (isLoading) View.VISIBLE else View.GONE
+            binding.scrollView.visibility = if (isLoading) View.INVISIBLE else View.VISIBLE
         }
 
         viewModel.error.observe(this) { isError ->
