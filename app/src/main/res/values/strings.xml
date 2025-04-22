@@ -6,6 +6,7 @@
     <string name="title_favorite">Favorite Events</string>
     <string name="title_settings">Settings</string>
 
+    <!--    Detail    -->
     <string name="name_event">Nama Event</string>
     <string name="failed">Gagal Mengambil Data</string>
     <string name="one_more">Tekan sekali lagi untuk keluar</string>
@@ -13,6 +14,7 @@
     <string name="event_owner">Diselenggarakan oleh: %1$s</string>
     <string name="event_quota" tools:ignore="PluralsCandidate">Kuota Peserta &#160;- %1$d Peserta</string>
     <string name="event_registered_text" tools:ignore="PluralsCandidate">Sebanyak %1$d peserta sudah terdaftar</string>
+    <string name="quota_remaining">Sisa Kuota &#160;- %1$d Peserta</string>
     <string name="category_event">Kategori Event -&#160;</string>
     <string name="event_description">Deskripsi lengkap event…</string>
     <string name="button_register">Register</string>

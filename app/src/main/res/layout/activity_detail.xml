@@ -124,6 +124,20 @@
 
             </LinearLayout>
 
+            <LinearLayout
+                android:padding="3dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_quota_remaining"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/quota_remaining"
+                    android:fontFamily="@font/poppins"
+                    android:textSize="15sp"/>
+
+            </LinearLayout>
 
             <LinearLayout
                 android:padding="3dp"

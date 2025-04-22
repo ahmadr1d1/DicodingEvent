@@ -110,6 +110,8 @@ class DetailActivity : AppCompatActivity() {
                         tvEventOwner.text = getString(R.string.event_owner, detailEventResponse.event.ownerName)
                         tvEventQuota.text = getString(R.string.event_quota, detailEventResponse.event.quota)
                         tvEventRegistered.text = getString(R.string.event_registered_text, detailEventResponse.event.registrants)
+                        val countQuota =  detailEventResponse.event.quota!! - detailEventResponse.event.registrants!!
+                        tvQuotaRemaining.text = getString(R.string.quota_remaining, countQuota)
                         tvEventDescription.text = HtmlCompat.fromHtml(
                             detailEventResponse.event.description.toString(),
                             HtmlCompat.FROM_HTML_MODE_LEGACY
