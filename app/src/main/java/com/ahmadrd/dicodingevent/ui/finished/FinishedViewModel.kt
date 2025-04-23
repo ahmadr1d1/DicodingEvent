@@ -26,7 +26,6 @@ class FinishedViewModel : ViewModel() {
     val error: LiveData<Boolean> = _error
 
     private var lastQuery: String? = null
-    var currentQuery: String = ""
 
     companion object {
         private const val TAG = "FinishedViewModel"
