@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.ahmadrd.dicodingevent.data.remote.response.Event
+import com.ahmadrd.dicodingevent.data.remote.response.ListEventsItem
 import com.ahmadrd.dicodingevent.databinding.FragmentFavoriteBinding
 import com.ahmadrd.dicodingevent.ui.adapter.ListFavoriteAdapter
 import com.ahmadrd.dicodingevent.ui.utils.ViewModelFactory
@@ -50,9 +50,9 @@ class FavoriteFragment : Fragment() {
         favoriteViewModel.getFavEvents().observe(viewLifecycleOwner) { events ->
             binding.tvFavNoData.visibility = if (events.isEmpty()) View.VISIBLE else View.GONE
             binding.tvFavorite.visibility = if (events.isEmpty()) View.GONE else View.VISIBLE
-            val items = arrayListOf<Event>()
+            val items = arrayListOf<ListEventsItem>()
             events.map {
-                val item = Event(
+                val item = ListEventsItem(
                     id = it.eventId,
                     mediaCover = it.mediaCover,
                     name = it.title,

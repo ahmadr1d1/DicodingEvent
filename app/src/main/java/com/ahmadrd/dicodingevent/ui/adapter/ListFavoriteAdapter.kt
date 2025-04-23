@@ -6,27 +6,27 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.ahmadrd.dicodingevent.data.remote.response.Event
+import com.ahmadrd.dicodingevent.data.remote.response.ListEventsItem
 import com.ahmadrd.dicodingevent.databinding.ItemRowFavBinding
 import com.ahmadrd.dicodingevent.ui.detail.DetailActivity
 import com.bumptech.glide.Glide
 
-class ListFavoriteAdapter: ListAdapter<Event, ListFavoriteAdapter.ViewHolder>(DIFF_CALLBACK) {
+class ListFavoriteAdapter: ListAdapter<ListEventsItem, ListFavoriteAdapter.ViewHolder>(DIFF_CALLBACK) {
 
     companion object {
-        val DIFF_CALLBACK = object : DiffUtil.ItemCallback<Event>() {
-            override fun areItemsTheSame(oldItem: Event, newItem: Event): Boolean {
+        val DIFF_CALLBACK = object : DiffUtil.ItemCallback<ListEventsItem>() {
+            override fun areItemsTheSame(oldItem: ListEventsItem, newItem: ListEventsItem): Boolean {
                 return oldItem.id == newItem.id
             }
 
-            override fun areContentsTheSame(oldItem: Event, newItem: Event): Boolean {
+            override fun areContentsTheSame(oldItem: ListEventsItem, newItem: ListEventsItem): Boolean {
                 return oldItem == newItem
             }
         }
     }
 
     class ViewHolder(private val binding: ItemRowFavBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(item: Event) {
+        fun bind(item: ListEventsItem) {
             binding.tvTitle.text = item.name
             binding.tvDesc.text = item.summary
             Glide.with(binding.root.context)
