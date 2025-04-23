@@ -42,6 +42,8 @@ class DetailActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        @Suppress("DEPRECATION")
+        window.statusBarColor = getColor(R.color.md_theme_primary)
 
         setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)

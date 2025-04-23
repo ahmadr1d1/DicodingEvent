@@ -33,6 +33,8 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, 0)
             insets
         }
+        @Suppress("DEPRECATION")
+        window.statusBarColor = getColor(R.color.md_theme_primary)
 
 
         val navView: BottomNavigationView = binding.navView
