@@ -111,46 +111,43 @@ class DetailActivity : AppCompatActivity() {
 
     private fun observeViewModel() {
         viewModel.detailEvent.observe(this) { detailEventResponse ->
-            if (detailEventResponse != null) {
-                if (detailEventResponse.event != null) {
-                    with(binding) {
-                        tvEventTitle.text = detailEventResponse.event.name
-                        tvEventCategory.text = detailEventResponse.event.category
-                        tvEventOwner.text = getString(R.string.event_owner, detailEventResponse.event.ownerName)
-                        tvEventQuota.text = getString(R.string.event_quota, detailEventResponse.event.quota)
-                        tvEventRegistered.text = getString(R.string.event_registered_text, detailEventResponse.event.registrants)
-                        val countQuota =  detailEventResponse.event.quota!! - detailEventResponse.event.registrants!!
-                        tvQuotaRemaining.text = getString(R.string.quota_remaining, countQuota)
-                        tvEventDescription.text = HtmlCompat.fromHtml(
-                            detailEventResponse.event.description.toString(),
-                            HtmlCompat.FROM_HTML_MODE_LEGACY
-                        )
-                        val beginHelperTime = HelperTime.formatBeginTime(detailEventResponse.event.beginTime!!)
-                        tvEventBeginTime.text = beginHelperTime
-
-                        Glide.with(this@DetailActivity)
-                            .load(detailEventResponse.event.mediaCover)
-                            .into(imgEventCover)
-
-                        btnRegister.setOnClickListener {
-                            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(detailEventResponse.event.link))
-                            startActivity(intent)
-                        }
-                    }
-                    favoriteEvent = FavoriteEvents(
-                        eventId = detailEventResponse.event.id,
-                        title = detailEventResponse.event.name,
-                        description = detailEventResponse.event.summary,
-                        mediaCover = detailEventResponse.event.mediaCover
+            if (detailEventResponse?.event != null) {
+                with(binding) {
+                    tvEventTitle.text = detailEventResponse.event.name
+                    tvEventCategory.text = detailEventResponse.event.category
+                    tvEventOwner.text = getString(R.string.event_owner, detailEventResponse.event.ownerName)
+                    tvEventQuota.text = getString(R.string.event_quota, detailEventResponse.event.quota)
+                    tvEventRegistered.text = getString(R.string.event_registered_text, detailEventResponse.event.registrants)
+                    val quotaRemaining = (detailEventResponse.event.quota ?: 0) - (detailEventResponse.event.registrants ?: 0)
+                    tvQuotaRemaining.text = getString(R.string.quota_remaining, quotaRemaining)
+                    tvEventDescription.text = HtmlCompat.fromHtml(
+                        detailEventResponse.event.description.toString(),
+                        HtmlCompat.FROM_HTML_MODE_LEGACY
                     )
+                    val beginHelperTime = HelperTime.formatBeginTime(detailEventResponse.event.beginTime!!)
+                    tvEventBeginTime.text = beginHelperTime
 
-                    favoriteViewModel.isEventFavorited(detailEventResponse.event.id!!).observe(this) { favorites ->
-                        val isFavorited = favorites.isNotEmpty()
-                        ivFavoriteState = isFavorited
-                        updateFavoriteIcon(isFavorited)
+                    Glide.with(this@DetailActivity)
+                        .load(detailEventResponse.event.mediaCover)
+                        .into(imgEventCover)
+
+                    btnRegister.setOnClickListener {
+                        val intent = Intent(Intent.ACTION_VIEW, Uri.parse(detailEventResponse.event.link))
+                        startActivity(intent)
                     }
                 }
+                favoriteEvent = FavoriteEvents(
+                    eventId = detailEventResponse.event.id,
+                    title = detailEventResponse.event.name,
+                    description = detailEventResponse.event.summary,
+                    mediaCover = detailEventResponse.event.mediaCover
+                )
 
+                favoriteViewModel.isEventFavorited(detailEventResponse.event.id!!).observe(this) { favorites ->
+                    val isFavorited = favorites.isNotEmpty()
+                    ivFavoriteState = isFavorited
+                    updateFavoriteIcon(isFavorited)
+                }
             }
         }
 
