@@ -2,7 +2,9 @@
 
 <p align="center">Submission Akhir Android Fundamental by Dicoding - <a href="https://www.dicoding.com/academies/14">Belajar Fundamental Aplikasi Android</a>
   <br>
-Gunakan repositori ini sebagai referensi saja, setiap plagiarisme akan terdeteksi secara otomatis</p>
+Gunakan repositori ini sebagai referensi saja, setiap plagiarisme akan terdeteksi secara otomatis
+<br>
+MVVM hanya diterapkan pada fitur Favorite Events</p>
 
 ## 📸 Screenshot Halaman Aplikasi
 <table>
