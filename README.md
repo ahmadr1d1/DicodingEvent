@@ -4,7 +4,7 @@
   <br>
 Gunakan repositori ini sebagai referensi saja, setiap plagiarisme akan terdeteksi secara otomatis
 <br>
-MVVM hanya diterapkan pada fitur Favorite Events</p>
+MVVM hanya diterapkan pada fitur Favorite Events(Local User Repository/berasal dari Database)</p>
 
 ## 📸 Screenshot Halaman Aplikasi
 <table>
